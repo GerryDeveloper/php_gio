@@ -1,8 +1,12 @@
 <?php
+include_once "util.php";
 
 echo "Hola mundo desde PHP with Gio";
 
 /*
+- la asignacion en PHP se hace por valor y no por referencia
+  copia el valor de la variable oroginal a la nueva
+
 - operadores con un solo operando es: OPERADOR UNARIO
 - operador con dos operandos es: OPERADOR BINARIO
 - operador con tres operandos es: OPERADOR TERNARIO
@@ -69,4 +73,61 @@ var_dump( fmod(10.88, 4.2222));
 
 echo "<hr>";
 echo "<h4>Operadores de Asignación</h4>";
+
+/*
+OPERADORES DE ASIGNACION
+- asignan el valor de la derecha a la izquierda
+- puedes asignar multiples variables al mismo tiempo
+*/
+
+// multiple asignation.
+$x = $y = 8;
+
+echo ("Asignacion multiple: " . $x . " " . $y);
+
+// you could also use more complex assignations
+
+br();
+
+$x = ($y = 10) + 5; // not recomended, makes code less readable
+
+var_dump($x, $y);
+
+// ============================
+/*
+  OPERADORES COMBINADOS
+
+- short-hand for the aritmetic or the String operators
+- usamos prefijo con el signo = precedido del simbolo de la operacion que vamos a realizar
+*/
+
+// ejemplo:
+$x = 5;
+$x = $x + 3;
+br();
+var_dump($x);
+
+h3("Operadores Combinados: +=, -=, /=, *=");
+$x = 5;
+$x += 3;
+br();
+var_dump($x);
+br();
+$x /= 4;
+var_dump($x);
+br();
+$x *= 4;
+var_dump($x);
+br();
+$x -= 4;
+var_dump($x);
+
+hr();
+h2("String operators: . .=");
+
+br();
+$s = "Hello";
+$s = $s . " World";
+$s .= " ASDF"; // using concatenation operator
+echo $s;
 ?>
